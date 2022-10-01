@@ -1,0 +1,271 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: rgb(223, 230, 236);
+}
+
+.contenedor {
+    max-width: 1350px;
+    margin: 5px auto;
+    display: grid;
+    /*grid-gap: 5px;*/
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    grid-template-areas: "header header"
+        "contenido contenido"
+        "footer footer";
+}
+
+.contenedor div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .navegador,
+.contenedor .footer {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/*Estilo header*/
+
+.contenedor .header {
+    grid-area: header;
+    background: rgb(61, 91, 107);
+    color: #FFFF;
+    padding-top: 5px;
+}
+
+header img {
+    width: 120px;
+    height: auto;
+    border: 2px solid #FFFF;
+    border-radius: 5px;
+    float: left;
+    margin: 5px 0;
+}
+
+.header h1 {
+    font-size: 35px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFF;
+    text-align: center;
+}
+
+/*Fin estilo header*/
+/*Estilo navegador*/
+
+.contenedor .navegador {
+    font-size: 13px;
+    background: rgb(61, 91, 107);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.navegador a {
+    padding: 3px;
+    border: 1px solid #FFFF;
+}
+
+.navegador a:link {
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+.navegador a:hover {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+.navegador a:visited {
+    text-decoration: none;
+    color: rgb(231, 218, 218);
+}
+
+.navegador a:active {
+    text-decoration: none;
+    color: rgb(7, 88, 116);
+}
+
+/*Fin estilo navegador*/
+/*Estilo contenido*/
+
+.contenedor .contenido {
+    grid-area: contenido;
+}
+
+.subtitulo {
+    margin: 20px 5px;
+}
+
+h3,
+h4 {
+    margin: 20px 5px;
+}
+
+h4 {
+    display: inline;
+}
+
+.vertodo {
+    padding: 3px;
+    background-color: rgb(117, 172, 202);
+    color: #FFFF;
+    border: 1px solid rgb(117, 172, 202);
+    border-radius: 5px;
+    text-decoration: none;
+
+}
+
+.muestrario {
+    margin: 25px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta {
+    margin: 5px;
+    width: 250px;
+    height: 350px;
+    background-color: aliceblue;
+    border: 2px solid rgb(218, 233, 247);
+    border-radius: 5px;
+    position: relative;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px 5px 0 0;
+}
+
+.tarjeta h2,
+.tarjeta p,
+.tarjeta a {
+    padding: 5px;
+}
+
+.tarjeta h2 {
+    font-size: 20px;
+    color: rgb(2, 63, 83);
+}
+
+.tarjeta p {
+    font-size: 15px;
+    color: rgb(7, 80, 104);
+}
+
+.tarjeta a {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(117, 172, 202);
+    color: #FFFF;
+    border: 1px solid rgb(117, 172, 202);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.boton {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 60px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.icon-wsp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/*Fin estilo contenido*/
+/*Estilo footer*/
+
+.contenedor .footer {
+    grid-area: footer;
+    background: rgb(61, 91, 107);
+    color: #FFFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer img {
+    height: 35px;
+}
+
+/*Fin estilo footer*/
+
+/* Tablets en horizonal y escritorios normales*/
+@media (min-width: 768px) and (max-width: 1199px) {
+    body {
+        background: pink;
+    }
+}
+
+/*/ Móviles en horizontal o tablets en vertical*/
+@media (max-width: 767px) {
+    body {
+        background: blue;
+    }
+
+    .contenedor {
+        grid-template-rows: 110px 1fr 50px;
+    }
+
+    header img {
+        width: 125px;
+    }
+
+    .header h1 {
+        font-size: 150%;
+    }
+
+    .contenedor .navegador {
+        font-size: 85%;
+        gap: 5px;
+    }
+}
+
+/* Móviles en vertical*/
+@media (max-width: 480px) {
+    body {
+        background: green;
+    }
+
+    .contenedor {
+        grid-template-rows: 110px 1fr 50px;
+    }
+
+    header img {
+        width: 125px;
+    }
+
+    .header h1 {
+        font-size: 150%;
+    }
+
+    .contenedor .navegador {
+        font-size: 80%;
+        gap: 5px;
+    }
+}
