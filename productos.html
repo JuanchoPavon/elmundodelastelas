@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Mundo de las Telas</title>
+    <link rel="shortcut icon" href="./imagenes/rollo_color.png" type="image/x-icon">
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--fontasome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- Inicio header -->
+        <header class="header">
+            <div class="logo">
+                <img src="./imagenes/logo_emt.JPG" alt="Logo_EMT">
+            </div>
+            <div class="title">
+                <h1>El Mundo de las Telas</h1>
+                <h2>Distribuidora de telas plásticas</h2>
+                <nav class="header-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="./productos.html#aautomotor">Línea Automotor</a>
+                    <a href="./productos.html#amuebles">Línea Muebles</a>
+                    <a href="./productos.html#ahogar">Línea Hogar</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav> 
+            </div>
+            <nav class="networks">
+                <ul class="networks-menu">
+                    <a href="https://www.instagram.com/elmundodelastelas.ar/" target="_blank">
+                        <li><i class="fa-brands fa-instagram icon-net"></i></li>
+                    </a>
+                    <a href="mailto:elmundodelastelas@gmail.com" target="_blank">
+                        <li><i class="fa-solid fa-envelope icon-net"></i></li>
+                    </a>
+                    <a href="https://goo.gl/maps/3uHknGHhD82XNNvu7" target="_blank">
+                        <li><i class="fa-solid fa-location-dot icon-net"></i></li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <!-- Fin header -->
+        <!-- Inicio main -->
+        <main class="contents-2">
+            <h3 id="aautomotor">Nuestros productos</h3>
+            <h4>Línea automotor</h4>
+            <div class="cards">
+                <div class="card" v-for="prod in automotor">
+                    <img :src="prod.imagen" :alt="prod.nombre">
+                    <h5>{{prod.nombre}}</h5>
+                    <p>{{prod.descripcion}}</p>
+                </div>
+            </div>
+            <h4 id="amuebles">Línea muebles</h4>
+            <div class="cards">
+                <div class="card" v-for="prod in muebles">
+                    <img :src="prod.imagen" :alt="prod.nombre">
+                    <h5>{{prod.nombre}}</h5>
+                    <p>{{prod.descripcion}}</p>
+                </div>
+            </div>
+            <h4 id="ahogar">Línea hogar</h4>
+            <div class="cards">
+                <div class="card" v-for="prod in hogar">
+                    <img :src="prod.imagen" :alt="prod.nombre">
+                    <h5>{{prod.nombre}}</h5>
+                    <p>{{prod.descripcion}}</p>
+                </div>
+            </div>
+            <div>
+                <a class="whatsapp" href="https://wa.me/541162550432"><img class="icon-wsp"
+                        src="./imagenes/wapp_color.png" alt="whatsapp"></a>
+            </div>
+        </main>
+        <!-- Fin main -->
+        <!-- Inicio footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <nav class="footer-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="./productos.html#aautomotor">Línea Automotor</a>
+                    <a href="./productos.html#amuebles">Línea Muebles</a>
+                    <a href="./productos.html#ahogar">Línea Hogar</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <p>Seguinos en nuestras redes</p>
+                <div class="container-nets">
+                    <a href="https://www.instagram.com/elmundodelastelas.ar/" target="_blank"><img
+                            src="./imagenes/insta_color.png" alt="instagram" class="net-icons">elmundodelastelas</a>
+                    <a href="mailto:elmundodelastelas@gmail.com" target="_blank"><img src="./imagenes/gmail_color.png"
+                            alt="email" class="net-icons">elmundodelastelas@gmail.com</a>
+                    <a href="https://goo.gl/maps/3uHknGHhD82XNNvu7" target="_blank"><img src="./imagenes/map_color.png"
+                            alt="mapa" class="net-icons">Camarones 2052 | CABA</a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-paragraph">© Copyright 2022 - Diseñado por Camila Torres, Juan Pavon y Nancy Rojas para
+                    Codo a Codo 4.0</p>
+            </div>
+        </footer>
+        <!-- Fin footer -->
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/productos.js"></script>
+</body>
+
+</html>
