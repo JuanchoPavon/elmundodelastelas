@@ -2,86 +2,29 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            automotor: [
-                {
-                    "nombre": "Cuerina Napa Microperforada",
-                    "descripcion": "Tapizado Renault Master.",
-                    "imagen": "./imagenes/cuerina-napa.jpeg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "Cuerina Bisonte Rojo",
-                    "descripcion": "Tapizado Fiat Vivace, incluye bondeado de 3 mm.",
-                    "imagen": "./imagenes/cuerina-bisonte.jpeg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "Cuerina importada antideslizante",
-                    "descripcion": "Tapizado Peugeot Boxer, incluye bondeado de 3 mm.",
-                    "imagen": "./imagenes/cuerina-antideslizante.jpeg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "BOXER",
-                    "descripcion": "Tela rústica macchiato.",
-                    "imagen": "./imagenes/rusticomacchiato.JPG",
-                    "precio": "",
-                },
-                
-            ],
-            muebles: [
-                {
-                    "nombre": "Cuerina para muebles Glamour",
-                    "descripcion": "Tela para tapizado cuerina naútica.",
-                    "imagen": "./imagenes/cuerina.glamour.jpeg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "Cuerina Talampaya Base Jersey",
-                    "descripcion": "Lino antimanchas para mantel, línea central.",
-                    "imagen": "./imagenes/cuerina-talampaya-2.jpeg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "Cuerina Talampaya Base Jersey",
-                    "descripcion": "Tela pana parís con diseño liso.",
-                    "imagen": "./imagenes/cuerina-talampaya.jpeg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "Cuerina para muebles Talampaya",
-                    "descripcion": "Tela rústica macchiato.",
-                    "imagen": "./imagenes/cuerina-para-muebles.jpeg",
-                    "precio": "",
-                },
-            ],
-            hogar: [
-                {
-                    "nombre": "CUERINA NAÚTICA",
-                    "descripcion": "Tela para tapizado cuerina naútica.",
-                    "imagen": "./imagenes/cuerina.jpg",
-                    "precio": "",
-                },
-                {
-                    "nombre": "LINO ANTIMANCHAS",
-                    "descripcion": "Lino antimanchas para mantel, línea central.",
-                    "imagen": "./imagenes/linoamancha.JPG",
-                    "precio": "",
-                },
-                {
-                    "nombre": "PANA PARÍS",
-                    "descripcion": "Tela pana parís con diseño liso.",
-                    "imagen": "./imagenes/panaparis.JPG",
-                    "precio": "",
-                },
-                {
-                    "nombre": "BOXER",
-                    "descripcion": "Tela rústica macchiato.",
-                    "imagen": "./imagenes/rusticomacchiato.JPG",
-                    "precio": "",
-                },
-            ],
+            url: "https://my-json-server.typicode.com/Camila-Murias/Api-Prod-elmundodelastelas/db",
+            automotor: [],
+            hogar: [],
+            muebles: [],
         }
-    }
-}).mount('#app')
+    },
 
+    methods: {
+        fetchData(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    this.automotor = data.automotor
+                    console.log(this.automotor)
+                    this.hogar = data.hogar
+                    console.log(this.hogar)
+                    this.muebles = data.muebles
+                    console.log(this.muebles)
+                })
+        }
+    },
+
+    created() {
+        this.fetchData(this.url)
+    },
+}).mount('#app')
