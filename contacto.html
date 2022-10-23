@@ -63,10 +63,10 @@
         <div class="form">
             <h4>Si desea recibir listas de precios y/o muestrarios complete este formulario:</h4>
             <br><br>
-            <form action="mailto:elmundodelastelas@gmail.com" method="post" enctype="text/plain">
+            <form action="mailto:elmundodelastelas@gmail.com" method="post" enctype="text/plain" id="formulario" name="formulario">
                 <div class="name-form">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" size="25" maxlength="25" required>
+                    <input type="text" name="nombre" id="nombre" size="25" maxlength="25">
                 </div>
                 <div class="lastname-fome">
                     <label for="direccion">Dirección:</label>
@@ -81,8 +81,8 @@
                     <input type="tel" name="telefono" id="telefono" size="15" maxlength="15">
                 </div>
                 <div class="email">
-                    <label for="correo">E-Mail:</label>
-                    <input type="email" name="correo" id="correo" size="25" required>
+                    <label for="email">E-Mail:</label>
+                    <input type="email" name="email" id="email" size="25" required>
                 </div>
                 
                 <div class="news">
@@ -93,7 +93,7 @@
                     <label for="Muestrarios">Deseo recibir muestrarios:</label>
                     <input type="checkbox" name="RecibeMuest" value="1">
                 </div>
-                <input type="submit" >
+                <input type="submit" value="Enviar">
             </form>
         </div>
         <div>
@@ -126,5 +126,6 @@
     <!-- Fin footer -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/productos.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
