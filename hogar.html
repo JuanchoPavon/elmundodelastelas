@@ -53,9 +53,9 @@
         <!-- Inicio main -->
         <main class="contents-2">
             <h3 id="aautomotor">Nuestros productos</h3>
-            <h4>Tapicería Automotor</h4>
+            <h4 id="ahogar">Línea Hogar</h4>
             <div class="cards">
-                <div class="card" v-for="prod in automotor">
+                <div class="card" v-for="prod in hogar">
                     <img :src="prod.imagen" :alt="prod.nombre">
                     <h5>{{prod.nombre}}</h5>
                     <p>{{prod.descripcion}}</p>
